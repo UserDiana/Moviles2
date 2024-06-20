@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".MessageFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@color/black">
+
+            <!-- Profile Icon -->
+            <ImageView
+                android:id="@+id/baseline_profile"
+                style="@style/StyleImageP" />
+
+            <!-- Main Search Area -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <RelativeLayout
+                    style="@style/styleRelative">
+
+                    <!-- Search Icon -->
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        style="@style/StyleImageB" />
+
+                    <EditText
+                        android:hint="Buscar"
+                        style="@style/StyleEditBuscar"
+                        android:layout_toEndOf="@id/search_icon"
+                        android:paddingStart="40dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Settings Icon -->
+            <ImageView
+                android:id="@+id/settings_icon"
+                style="@style/StyleImageC" />
+        </LinearLayout>
+
+
+        <!-- Título en negritas -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="¡Te damos la bienvenida a tu bandeja de entrada!"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-195dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="Envía una frase, comparte posts y mucho
+más con las conversaciones privadas entre tú y otras personas en X."
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Button
+
+            android:layout_marginStart="120dp"
+            android:background="@drawable/btn_primary"
+            android:id="@+id/subscribeButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:text="Escribe un mensaje"
+            android:gravity="center"
+            android:layout_marginTop="520dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+        <!-- Botón circular en la esquina inferior derecha -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            app:srcCompat="@drawable/baseline_add_comment_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:backgroundTint="@android:color/holo_blue_dark"
+            app:tint="@android:color/white" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/activity_main_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
